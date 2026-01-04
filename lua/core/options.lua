@@ -38,9 +38,3 @@ vim.opt.cmdheight = 0
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = false
-
-vim.opt.guicursor = "n-v-c:block-Cursor"
-vim.api.nvim_set_hl(0, "Cursor", { fg = "#101010", bg = "#FFC799"})
-vim.api.nvim_set_hl(0, "Cursor2", { fg = "#101010", bg = "#FFC799" })
-
-
