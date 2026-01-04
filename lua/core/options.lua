@@ -39,9 +39,5 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = false
 
-vim.opt.guicursor = {
-  "n:block",
-  "v:block",
-  "i:ver25",
-  "c:ver25",
-}
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
+vim.cmd("highlight Cursor guifg=#010101 guibg=#FFC799")
