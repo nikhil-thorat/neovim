@@ -42,8 +42,8 @@ return {
     local quote = quotes[math.random(#quotes)]
 
     dashboard.section.footer.val = {
-      "",
-      "“" .. quote .. "”",
+      "Skill Issue!",
+      -- "“" .. quote .. "”",
     }
 
     dashboard.section.footer.opts = {
