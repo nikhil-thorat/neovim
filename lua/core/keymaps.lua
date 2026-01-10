@@ -29,13 +29,12 @@ map({ "n", "v" }, "<leader>y", '"+y', opts)
 map("n", "<leader>Y", '"+Y', opts)
 
 map("n", "<leader>w", "<cmd>w<CR>", opts)
-map("n", "<leader>q", "<cmd>q<CR>", opts)
 map("n", "<leader>r", "<cmd>source $MYVIMRC<CR>", opts)
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
 
-map("n", "<leader>cd", vim.diagnostic.open_float, opts)
+map("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
 map("n", "<Esc>", "<cmd>nohl<CR>", opts)
