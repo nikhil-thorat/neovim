@@ -12,10 +12,10 @@ vim.opt.smartindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 
-vim.opt.scrolloff = 100
-vim.opt.sidescrolloff = 100
+-- vim.opt.scrolloff = 100
+-- vim.opt.sidescrolloff = 100
 
 vim.opt.number = false
 vim.opt.relativenumber = false

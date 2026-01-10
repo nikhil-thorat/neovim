@@ -35,3 +35,7 @@ map("n", "<leader>r", "<cmd>source $MYVIMRC<CR>", opts)
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
+
+map("n", "<leader>cd", vim.diagnostic.open_float, opts)
+
+map("n", "<Esc>", "<cmd>nohl<CR>", opts)
