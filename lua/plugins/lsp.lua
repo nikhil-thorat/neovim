@@ -12,6 +12,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"clangd",
 					"lua_ls",
 					"pyright",
 					"gopls",
@@ -34,6 +35,10 @@ return {
 				},
 			})
 
+			vim.lsp.config("clangd", {
+				capabilities = capabilities,
+			})
+
 			vim.lsp.config("pyright", {
 				capabilities = capabilities,
 			})
@@ -43,6 +48,7 @@ return {
 			})
 
 			vim.lsp.enable({
+				"clandg",
 				"lua_ls",
 				"pyright",
 				"gopls",
