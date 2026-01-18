@@ -1,72 +1,71 @@
 return {
-  "goolord/alpha-nvim",
-  event = "VimEnter",
-  config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
+	"goolord/alpha-nvim",
+	event = "VimEnter",
+	config = function()
+		local alpha = require("alpha")
+		local dashboard = require("alpha.themes.dashboard")
 
-    dashboard.section.header.val = {
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      " ██████╗ ██╗  ██╗██╗  ██╗██████╗  ██████╗  ██████╗ █████╗ ",
-      "██╔═████╗╚██╗██╔╝██║  ██║╚════██╗██╔═████╗██╔════╝██╔══██╗",
-      "██║██╔██║ ╚███╔╝ ███████║ █████╔╝██║██╔██║███████╗╚██████║",
-      "████╔╝██║ ██╔██╗ ╚════██║██╔═══╝ ████╔╝██║██╔═══██╗╚═══██║",
-      "╚██████╔╝██╔╝ ██╗     ██║███████╗╚██████╔╝╚██████╔╝█████╔╝",
-      " ╚═════╝ ╚═╝  ╚═╝     ╚═╝╚══════╝ ╚═════╝  ╚═════╝ ╚════╝ ",
-    }
+		dashboard.section.header.val = {
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			" ██████╗ ██╗  ██╗██╗  ██╗██████╗  ██████╗  ██████╗ █████╗ ",
+			"██╔═████╗╚██╗██╔╝██║  ██║╚════██╗██╔═████╗██╔════╝██╔══██╗",
+			"██║██╔██║ ╚███╔╝ ███████║ █████╔╝██║██╔██║███████╗╚██████║",
+			"████╔╝██║ ██╔██╗ ╚════██║██╔═══╝ ████╔╝██║██╔═══██╗╚═══██║",
+			"╚██████╔╝██╔╝ ██╗     ██║███████╗╚██████╔╝╚██████╔╝█████╔╝",
+			" ╚═════╝ ╚═╝  ╚═╝     ╚═╝╚══════╝ ╚═════╝  ╚═════╝ ╚════╝ ",
+		}
 
-    dashboard.section.buttons.val = {}
+		dashboard.section.buttons.val = {}
 
-    local quotes = {
-      "Programs must be written for people to read, and only incidentally for machines to execute.",
-      "Simplicity is prerequisite for reliability.",
-      "First, solve the problem. Then, write the code.",
-      "Deleted code is debugged code.",
-      "Code is read much more often than it is written.",
-      "The best error message is the one that never shows up.",
-    }
+		local quotes = {
+			"Programs must be written for people to read, and only incidentally for machines to execute.",
+			"Simplicity is prerequisite for reliability.",
+			"First, solve the problem. Then, write the code.",
+			"Deleted code is debugged code.",
+			"Code is read much more often than it is written.",
+			"The best error message is the one that never shows up.",
+		}
 
-    math.randomseed(os.time())
-    local quote = quotes[math.random(#quotes)]
+		math.randomseed(os.time())
+		local quote = quotes[math.random(#quotes)]
 
-    dashboard.section.footer.val = {
-      "Skill Issue!",
-      -- "“" .. quote .. "”",
-    }
+		dashboard.section.footer.val = {
+			"Skill Issue!",
+			-- "“" .. quote .. "”",
+		}
 
-    dashboard.section.footer.opts = {
-      hl = "Comment",
-    }
+		dashboard.section.footer.opts = {
+			hl = "Comment",
+		}
 
-    dashboard.config.layout = {
-      { type = "padding", val = 1 },
-      dashboard.section.header,
-      { type = "padding", val = 2 },
-      dashboard.section.buttons,
-      { type = "padding", val = 2 },
-      {
-        type = "text",
-        val = dashboard.section.footer.val,
-        opts = {
-          position = "center",
-          hl = "Comment",
-        },
-      },
-    }
+		dashboard.config.layout = {
+			{ type = "padding", val = 1 },
+			dashboard.section.header,
+			{ type = "padding", val = 2 },
+			dashboard.section.buttons,
+			{ type = "padding", val = 2 },
+			{
+				type = "text",
+				val = dashboard.section.footer.val,
+				opts = {
+					position = "center",
+					hl = "Comment",
+				},
+			},
+		}
 
-    alpha.setup(dashboard.config)
-  end,
+		alpha.setup(dashboard.config)
+	end,
 }
-

@@ -1,38 +1,38 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        require("telescope").setup({
-            defaults = {
-                layout_strategy = "horizontal",
-                layout_config = {
-                    prompt_position = "bottom",
-                    width = 0.4,
-                    height = 0.5,
-                },
-                sorting_strategy = "descending",
-            },
+	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		require("telescope").setup({
+			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					prompt_position = "bottom",
+					width = 0.4,
+					height = 0.5,
+				},
+				sorting_strategy = "descending",
+			},
 
-            pickers = {
-                find_files = {
-                    previewer = false,
-                },
-                live_grep = {
-                    previewer = false,
-                },
-                buffers = {
-                    previewer = false,
-                },
-                help_tags = {
-                    previewer = false,
-                },
-                oldfiles = {
-                    previewer = false,
-                },
-                grep_string = {
-                    previewer = false,
-                },
-            },
-        })
-    end,
+			pickers = {
+				find_files = {
+					previewer = false,
+				},
+				live_grep = {
+					previewer = false,
+				},
+				buffers = {
+					previewer = false,
+				},
+				help_tags = {
+					previewer = false,
+				},
+				oldfiles = {
+					previewer = false,
+				},
+				grep_string = {
+					previewer = false,
+				},
+			},
+		})
+	end,
 }

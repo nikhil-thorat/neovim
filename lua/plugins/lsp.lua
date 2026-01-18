@@ -48,7 +48,7 @@ return {
 			})
 
 			vim.lsp.enable({
-				"clandg",
+				"clangd",
 				"lua_ls",
 				"pyright",
 				"gopls",
