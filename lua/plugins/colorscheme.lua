@@ -1,20 +1,13 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
 	config = function()
-		require("rose-pine").setup({
-			variant = "auto",
-			enable = {
-				terminal = true,
-				legacy_highlights = true,
-				migrations = true,
-			},
-			styles = {
-				bold = true,
-				italic = true,
-				transparency = false,
-			},
+		require("gruvbox").setup({
+			terminal_colors = true,
+			contrast = "hard",
+			palette_overrides = {},
+			transparent_mode = true,
 		})
-		vim.cmd("colorscheme rose-pine")
+		vim.cmd("colorscheme gruvbox")
 	end,
 }
