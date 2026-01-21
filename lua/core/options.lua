@@ -19,7 +19,7 @@ vim.opt.hlsearch = true
 
 vim.opt.number = false
 vim.opt.relativenumber = false
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 
