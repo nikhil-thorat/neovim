@@ -28,6 +28,14 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 			},
+			window = {
+				completion = {
+					border = "solid",
+				},
+				documentation = {
+					border = "solid",
+				},
+			},
 		})
 	end,
 }
