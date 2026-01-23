@@ -14,10 +14,12 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
+vim.opt.cursorline = true
+
 -- vim.opt.scrolloff = 100
 -- vim.opt.sidescrolloff = 100
 
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.signcolumn = "no"
 vim.opt.wrap = false
