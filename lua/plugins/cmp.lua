@@ -29,12 +29,8 @@ return {
 				{ name = "luasnip" },
 			},
 			window = {
-				completion = {
-					border = "solid",
-				},
-				documentation = {
-					border = "solid",
-				},
+				compeltion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
 			},
 		})
 	end,

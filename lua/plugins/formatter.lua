@@ -14,6 +14,7 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
+			cpp = { "clang-format" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			go = { "goimports", "gofumpt" },

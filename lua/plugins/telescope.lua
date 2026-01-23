@@ -4,11 +4,12 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				layout_strategy = "horizontal",
+				theme = "ivy",
+				layout_strategy = "vertical",
 				layout_config = {
 					prompt_position = "bottom",
 					width = 0.4,
-					height = 0.5,
+					height = 0.4,
 				},
 				sorting_strategy = "descending",
 			},
