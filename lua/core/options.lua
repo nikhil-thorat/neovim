@@ -14,7 +14,8 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 
 -- vim.opt.scrolloff = 100
 -- vim.opt.sidescrolloff = 100
