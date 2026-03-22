@@ -1,12 +1,9 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"batman-theme",
+	dir = "~/.config/nvim/colors",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		require("kanagawa").setup({
-			terminalColors = true,
-			transparent = true,
-			theme = "dragon",
-		})
-		vim.cmd("colorscheme kanagawa-dragon")
+		vim.cmd([[colorscheme batman]])
 	end,
 }
