@@ -23,4 +23,5 @@ require("lazy").setup({
 	require("plugins.autopairs"),
 	require("plugins.alpha"),
 	require("plugins.formatter"),
+	require("plugins.tmux"),
 })
