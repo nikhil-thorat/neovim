@@ -14,6 +14,11 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", opts)
+map("n", "<C-j>", "<cmd> TmuxNavigateUp<CR>", opts)
+map("n", "<C-k>", "<cmd> TmuxNavigateDown<CR>", opts)
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
+
 map("n", "<leader>bn", "<cmd>bnext<CR>", opts)
 map("n", "<leader>bp", "<cmd>bprevious<CR>", opts)
 map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
