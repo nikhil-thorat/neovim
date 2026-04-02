@@ -8,6 +8,7 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>", opts)
 
 map("n", "<leader>sv", "<cmd>vsplit<CR>", opts)
 map("n", "<leader>sh", "<cmd>split<CR>", opts)
+map("n", "<leader>sq", "<cmd>close<CR>", opts)
 
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
