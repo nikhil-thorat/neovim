@@ -22,7 +22,7 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 
 vim.opt.number = true
 vim.opt.relativenumber = false
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.termguicolors = true
 
