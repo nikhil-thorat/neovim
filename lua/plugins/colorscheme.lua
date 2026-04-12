@@ -1,8 +1,9 @@
 return {
-	"mellow-theme/mellow.nvim",
+	"stealth-theme",
+	dir = "~/.config/nvim/colors",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.g.mellow_transparent = true
-		vim.cmd("colorscheme mellow")
+		vim.cmd([[colorscheme stealth]])
 	end,
 }
