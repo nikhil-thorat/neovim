@@ -5,7 +5,7 @@ vim.cmd("set termguicolors")
 vim.g.colors_name = "stealth"
 
 local colors = {
-	bg = "#0e0e0e",
+	bg = "#010203",
 	surface = "#161616",
 	fg = "#b0b8b8",
 	cursor = "#e2553d",
