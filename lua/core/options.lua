@@ -24,7 +24,7 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
-vim.opt.columns = 100
+vim.opt.linebreak = true
 vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
