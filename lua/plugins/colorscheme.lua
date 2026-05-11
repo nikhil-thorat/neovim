@@ -1,9 +1,8 @@
 return {
-	"batman",
-	dir = "~/.config/nvim/colors",
-	lazy = false,
+	"mellow-theme/mellow.nvim",
 	priority = 1000,
 	config = function()
-		vim.cmd([[colorscheme batman]])
+		vim.g.mellow_transparent = true
+		vim.cmd("colorscheme mellow")
 	end,
 }
