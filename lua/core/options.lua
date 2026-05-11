@@ -17,13 +17,14 @@ vim.opt.hlsearch = true
 vim.opt.cursorline = false
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 
--- vim.opt.scrolloff = 100
+vim.opt.scrolloff = 10
 -- vim.opt.sidescrolloff = 100
 
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
+vim.opt.columns = 100
 vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
