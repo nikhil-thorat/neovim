@@ -1,48 +1,18 @@
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		require("tokyonight").setup({
-			style = "night",
-			transparent = true,
-			styles = {
-				comments = { italic = true },
-				keywords = { italic = false },
-				functions = { italic = false },
-				variables = { italic = false },
-			},
-			on_highlights = function(hl, c)
-				local prompt = "#2d3149"
-				hl.TelescopeNormal = {
-					bg = c.bg_dark,
-					fg = c.fg_dark,
-				}
-				hl.TelescopeBorder = {
-					bg = c.bg_dark,
-					fg = c.bg_dark,
-				}
-				hl.TelescopePromptNormal = {
-					bg = prompt,
-				}
-				hl.TelescopePromptBorder = {
-					bg = prompt,
-					fg = prompt,
-				}
-				hl.TelescopePromptTitle = {
-					bg = prompt,
-					fg = prompt,
-				}
-				hl.TelescopePreviewTitle = {
-					bg = c.bg_dark,
-					fg = c.bg_dark,
-				}
-				hl.TelescopeResultsTitle = {
-					bg = c.bg_dark,
-					fg = c.bg_dark,
-				}
-			end,
-		})
-		vim.cmd([[colorscheme tokyonight-night]])
-	end,
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    config = function()
+        require('kanagawa').setup({
+            commentStyle = { italic = true },
+            functionStyle = { italic = false },
+            keywordStyle = { italic = false },
+            statementStyle = { bold = true },
+            transparent = true,
+            terminalColors = true,
+        })
+        vim.cmd("colorscheme kanagawa")
+        vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE" })
+    end
 }
