@@ -24,4 +24,5 @@ require("lazy").setup({
     require("plugins.alpha"),
     require("plugins.formatter"),
     require("plugins.tmux"),
+    require("plugins.todo-comment"),
 })
