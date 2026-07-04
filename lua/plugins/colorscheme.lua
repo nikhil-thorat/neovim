@@ -26,9 +26,21 @@ return {
 
             custom_highlights = function(colors)
                 return {
-                    NormalFloat = { bg = "NONE" },
-                    FloatBorder = { bg = "NONE" },
-                    FloatTitle = { bg = "NONE" },
+                    NormalFloat = {
+                        fg = colors.text,
+                        bg = colors.mantle,
+                    },
+
+                    FloatBorder = {
+                        fg = colors.lavendar,
+                        bg = colors.mantle,
+                    },
+
+                    FloatTitle = {
+                        fg = colors.mauve,
+                        bg = colors.mantle,
+                    },
+
 
                     SignColumn = { bg = "NONE" },
                     FoldColumn = { bg = "NONE" },
