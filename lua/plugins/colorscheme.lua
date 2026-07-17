@@ -1,46 +1,37 @@
 return {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rebelot/kanagawa.nvim",
     priority = 1000,
     lazy = false,
 
     config = function()
-        require("catppuccin").setup({
-            flavour = "mocha",
+        local colors = require("kanagawa.colors").setup({ theme = "dragon" })
 
-            transparent_background = true,
-            term_colors = true,
+        require("kanagawa").setup({
+            theme = "dragon",
+            transparent = true,
+            terminalColors = true,
 
-            styles = {
-                comments = { "italic" },
-                functions = {},
-                keywords = {},
-            },
+            commentStyle = { italic = true },
+            keywordStyle = {},
+            functionStyle = {},
 
-            integrations = {
-                cmp = true,
-                treesitter = true,
-                telescope = true,
-                mason = true,
-            },
-
-            custom_highlights = function(colors)
+            overrides = function()
                 return {
                     NormalFloat = {
-                        fg = colors.text,
-                        bg = colors.mantle,
+                        fg = colors.theme.ui.fg,
+                        bg = colors.theme.ui.bg_m3,
                     },
 
                     FloatBorder = {
-                        fg = colors.lavendar,
-                        bg = colors.mantle,
+                        fg = colors.palette.dragonBlue,
+                        bg = colors.theme.ui.bg_m3,
                     },
 
                     FloatTitle = {
-                        fg = colors.mauve,
-                        bg = colors.mantle,
+                        fg = colors.palette.dragonPink,
+                        bg = colors.theme.ui.bg_m3,
+                        bold = true,
                     },
-
 
                     SignColumn = { bg = "NONE" },
                     FoldColumn = { bg = "NONE" },
@@ -48,64 +39,64 @@ return {
                     CursorLineNr = { bg = "NONE" },
 
                     LazyNormal = {
-                        bg = colors.mantle,
-                        fg = colors.subtext1,
+                        bg = colors.theme.ui.bg_m3,
+                        fg = colors.theme.ui.fg_dim,
                     },
 
                     MasonNormal = {
-                        bg = colors.mantle,
-                        fg = colors.subtext1,
+                        bg = colors.theme.ui.bg_m3,
+                        fg = colors.theme.ui.fg_dim,
                     },
 
                     Pmenu = {
-                        fg = colors.text,
-                        bg = colors.surface0,
+                        fg = colors.theme.ui.fg,
+                        bg = colors.theme.ui.bg_p1,
                     },
 
                     PmenuSel = {
-                        fg = colors.base,
-                        bg = colors.blue,
+                        fg = colors.theme.ui.bg,
+                        bg = colors.palette.dragonBlue,
                     },
 
                     PmenuSbar = {
-                        bg = colors.surface1,
+                        bg = colors.theme.ui.bg_p2,
                     },
 
                     PmenuThumb = {
-                        bg = colors.surface2,
+                        bg = colors.theme.ui.bg_p1,
                     },
 
                     TelescopeTitle = {
-                        fg = colors.mauve,
+                        fg = colors.palette.dragonPink,
                         bold = true,
                     },
 
                     TelescopePromptNormal = {
-                        bg = colors.surface0,
+                        bg = colors.theme.ui.bg_p1,
                     },
 
                     TelescopePromptBorder = {
-                        fg = colors.surface0,
-                        bg = colors.surface0,
+                        fg = colors.theme.ui.bg_p1,
+                        bg = colors.theme.ui.bg_p1,
                     },
 
                     TelescopeResultsNormal = {
-                        fg = colors.subtext1,
-                        bg = colors.mantle,
+                        fg = colors.theme.ui.fg_dim,
+                        bg = colors.theme.ui.bg_m3,
                     },
 
                     TelescopeResultsBorder = {
-                        fg = colors.mantle,
-                        bg = colors.mantle,
+                        fg = colors.theme.ui.bg_m3,
+                        bg = colors.theme.ui.bg_m3,
                     },
 
                     TelescopePreviewNormal = {
-                        bg = colors.crust,
+                        bg = colors.theme.ui.bg,
                     },
 
                     TelescopePreviewBorder = {
-                        fg = colors.crust,
-                        bg = colors.crust,
+                        fg = colors.theme.ui.bg,
+                        bg = colors.theme.ui.bg,
                     },
 
                     ["@comment"] = {
@@ -131,6 +122,6 @@ return {
             end,
         })
 
-        vim.cmd.colorscheme("catppuccin-mocha")
+        vim.cmd.colorscheme("kanagawa-dragon")
     end,
 }
