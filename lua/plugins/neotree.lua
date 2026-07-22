@@ -11,7 +11,7 @@ return {
             close_if_last_window = true,
             window = {
                 position = "right",
-                width = 30,
+                width = 25,
                 toggle = true,
             },
             filesystem = {
