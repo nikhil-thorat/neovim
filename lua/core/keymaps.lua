@@ -44,3 +44,10 @@ map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
 map("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
 map("n", "<Esc>", "<cmd>nohl<CR>", opts)
+
+map("n", "<leader>c", function()
+    vim.cmd("write")
+    vim.cmd("botright split")
+    vim.cmd("resize 12")
+    vim.cmd("terminal clang++ % -std=c++20 -O2 -Wall -Wextra -o /tmp/a.out && /tmp/a.out")
+end)
