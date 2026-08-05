@@ -1,171 +1,169 @@
 return {
-    "mellow-theme/mellow.nvim",
+    "Mofiqul/vscode.nvim",
     priority = 1000,
+    lazy = false,
 
     config = function()
-        vim.g.mellow_transparent = true
-        vim.cmd.colorscheme("mellow")
+        local c = require("vscode.colors").get_colors()
 
-        local c = require("mellow.colors").dark
-        local hl = vim.api.nvim_set_hl
+        require("vscode").setup({
+            transparent = true,
+            terminal_colors = true,
+            italic_comments = true,
+            disable_nvimtree_bg = true,
 
-        hl(0, "NormalFloat", {
-            fg = c.fg,
-            bg = c.gray01,
+            group_overrides = {
+                NormalFloat = {
+                    fg = c.vscFront,
+                    bg = c.vscPopupBack,
+                },
+
+                FloatBorder = {
+                    fg = c.vscAccentBlue,
+                    bg = c.vscPopupBack,
+                },
+
+                FloatTitle = {
+                    fg = c.vscAccentBlue,
+                    bg = c.vscPopupBack,
+                    bold = true,
+                },
+
+                SignColumn = { bg = "NONE" },
+                FoldColumn = { bg = "NONE" },
+                LineNr = { bg = "NONE" },
+                CursorLineNr = { bg = "NONE" },
+
+                TabLine = {
+                    bg = "NONE",
+                },
+
+                TabLineFill = {
+                    bg = "NONE",
+                },
+
+                TabLineSel = {
+                    bg = "NONE",
+                },
+
+                BufferLineFill = {
+                    bg = "NONE",
+                },
+
+                BufferLineBackground = {
+                    bg = "NONE",
+                },
+
+                BufferLineBufferVisible = {
+                    bg = "NONE",
+                },
+
+                BufferLineBufferSelected = {
+                    bg = "NONE",
+                    bold = true,
+                },
+
+                BufferLineSeparator = {
+                    fg = c.vscBack,
+                    bg = "NONE",
+                },
+
+                BufferLineSeparatorVisible = {
+                    fg = c.vscBack,
+                    bg = "NONE",
+                },
+
+                BufferLineSeparatorSelected = {
+                    fg = c.vscBack,
+                    bg = "NONE",
+                },
+
+                BufferLineIndicatorSelected = {
+                    fg = c.vscAccentBlue,
+                    bg = "NONE",
+                },
+
+                LazyNormal = {
+                    fg = c.vscFront,
+                    bg = c.vscPopupBack,
+                },
+
+                MasonNormal = {
+                    fg = c.vscFront,
+                    bg = c.vscPopupBack,
+                },
+
+                Pmenu = {
+                    fg = c.vscFront,
+                    bg = c.vscPopupBack,
+                },
+
+                PmenuSel = {
+                    fg = c.vscUiBase,
+                    bg = c.vscAccentBlue,
+                    bold = true,
+                },
+
+                PmenuSbar = {
+                    bg = c.vscScrollBar,
+                },
+
+                PmenuThumb = {
+                    bg = c.vscScrollBarHover,
+                },
+
+                TelescopeNormal = {
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopeBorder = {
+                    fg = c.vscPopupBack,
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopePromptNormal = {
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopePromptBorder = {
+                    fg = c.vscPopupBack,
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopePromptTitle = {
+                    fg = c.vscAccentBlue,
+                    bg = c.vscPopupBack,
+                    bold = true,
+                },
+
+                TelescopeResultsNormal = {
+                    fg = c.vscFront,
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopeResultsBorder = {
+                    fg = c.vscPopupBack,
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopePreviewNormal = {
+                    bg = c.vscPopupBack,
+                },
+
+                TelescopePreviewBorder = {
+                    fg = c.vscPopupBack,
+                    bg = c.vscPopupBack,
+                },
+
+                ["@comment"] = { italic = true },
+                ["@keyword"] = { italic = false },
+                ["@function"] = { italic = false },
+                ["@keyword.return"] = { italic = false },
+                ["@keyword.function"] = { italic = false },
+            }
+
         })
 
-        hl(0, "FloatBorder", {
-            fg = c.blue,
-            bg = c.gray01,
-        })
-
-        hl(0, "FloatTitle", {
-            fg = c.blue,
-            bg = c.gray01,
-            bold = true,
-        })
-
-        local transparent = {
-            "SignColumn",
-            "FoldColumn",
-            "LineNr",
-            "CursorLineNr",
-
-            "TabLine",
-            "TabLineFill",
-            "TabLineSel",
-
-            "BufferLineFill",
-            "BufferLineBackground",
-            "BufferLineBufferVisible",
-        }
-
-        for _, group in ipairs(transparent) do
-            hl(0, group, {
-                bg = c.none,
-            })
-        end
-
-        hl(0, "BufferLineBufferSelected", {
-            bg = c.none,
-            bold = true,
-        })
-
-        hl(0, "BufferLineSeparator", {
-            fg = c.bg,
-            bg = c.none,
-        })
-
-        hl(0, "BufferLineSeparatorVisible", {
-            fg = c.bg,
-            bg = c.none,
-        })
-
-        hl(0, "BufferLineSeparatorSelected", {
-            fg = c.bg,
-            bg = c.none,
-        })
-
-        hl(0, "BufferLineIndicatorSelected", {
-            fg = c.blue,
-            bg = c.none,
-        })
-
-
-        hl(0, "LazyNormal", {
-            fg = c.fg,
-            bg = c.gray01,
-        })
-
-
-        hl(0, "MasonNormal", {
-            fg = c.fg,
-            bg = c.gray01,
-        })
-
-
-        hl(0, "Pmenu", {
-            fg = c.fg,
-            bg = c.gray01,
-        })
-
-        hl(0, "PmenuSel", {
-            fg = c.bg_dark,
-            bg = c.blue,
-            bold = true,
-        })
-
-        hl(0, "PmenuSbar", {
-            bg = c.gray03,
-        })
-
-        hl(0, "PmenuThumb", {
-            bg = c.gray04,
-        })
-
-
-        hl(0, "TelescopeNormal", {
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopeBorder", {
-            fg = c.gray01,
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopePromptNormal", {
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopePromptBorder", {
-            fg = c.gray01,
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopePromptTitle", {
-            fg = c.blue,
-            bg = c.gray01,
-            bold = true,
-        })
-
-        hl(0, "TelescopeResultsNormal", {
-            fg = c.fg,
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopeResultsBorder", {
-            fg = c.gray01,
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopePreviewNormal", {
-            bg = c.gray01,
-        })
-
-        hl(0, "TelescopePreviewBorder", {
-            fg = c.gray01,
-            bg = c.gray01,
-        })
-
-
-        hl(0, "@comment", {
-            italic = true,
-        })
-
-        hl(0, "@keyword", {
-            italic = false,
-        })
-
-        hl(0, "@function", {
-            italic = false,
-        })
-
-        hl(0, "@keyword.return", {
-            italic = false,
-        })
-
-        hl(0, "@keyword.function", {
-            italic = false,
-        })
+        vim.cmd.colorscheme("vscode")
     end,
 }
