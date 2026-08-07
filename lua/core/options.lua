@@ -14,13 +14,13 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 
 vim.opt.scrolloff = 10
 -- vim.opt.sidescrolloff = 100
 
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
