@@ -1,38 +1,54 @@
 return {
-    "Mofiqul/vscode.nvim",
+    "rose-pine/neovim",
+    name = "rose-pine",
     priority = 1000,
     lazy = false,
 
     config = function()
-        local c = require("vscode.colors").get_colors()
+        local rose = require("rose-pine.palette")
 
-        require("vscode").setup({
-            transparent = true,
-            terminal_colors = true,
-            italic_comments = true,
-            disable_nvimtree_bg = true,
+        require("rose-pine").setup({
+            variant = "main",
 
-            group_overrides = {
+            disable_background = true,
+            disable_float_background = false,
+
+            styles = {
+                italic = true,
+            },
+
+            highlight_groups = {
                 NormalFloat = {
-                    fg = c.vscFront,
-                    bg = c.vscPopupBack,
+                    fg = rose.text,
+                    bg = rose.surface,
                 },
 
                 FloatBorder = {
-                    fg = c.vscAccentBlue,
-                    bg = c.vscPopupBack,
+                    fg = rose.foam,
+                    bg = rose.surface,
                 },
 
                 FloatTitle = {
-                    fg = c.vscAccentBlue,
-                    bg = c.vscPopupBack,
+                    fg = rose.foam,
+                    bg = rose.surface,
                     bold = true,
                 },
 
-                SignColumn = { bg = "NONE" },
-                FoldColumn = { bg = "NONE" },
-                LineNr = { bg = "NONE" },
-                CursorLineNr = { bg = "NONE" },
+                SignColumn = {
+                    bg = "NONE",
+                },
+
+                FoldColumn = {
+                    bg = "NONE",
+                },
+
+                LineNr = {
+                    bg = "NONE",
+                },
+
+                CursorLineNr = {
+                    bg = "NONE",
+                },
 
                 TabLine = {
                     bg = "NONE",
@@ -64,106 +80,120 @@ return {
                 },
 
                 BufferLineSeparator = {
-                    fg = c.vscBack,
+                    fg = rose.base,
                     bg = "NONE",
                 },
 
                 BufferLineSeparatorVisible = {
-                    fg = c.vscBack,
+                    fg = rose.base,
                     bg = "NONE",
                 },
 
                 BufferLineSeparatorSelected = {
-                    fg = c.vscBack,
+                    fg = rose.base,
                     bg = "NONE",
                 },
 
                 BufferLineIndicatorSelected = {
-                    fg = c.vscAccentBlue,
+                    fg = rose.foam,
                     bg = "NONE",
                 },
 
                 LazyNormal = {
-                    fg = c.vscFront,
-                    bg = c.vscPopupBack,
+                    fg = rose.text,
+                    bg = rose.surface,
                 },
 
                 MasonNormal = {
-                    fg = c.vscFront,
-                    bg = c.vscPopupBack,
+                    fg = rose.text,
+                    bg = rose.surface,
                 },
 
                 Pmenu = {
-                    fg = c.vscFront,
-                    bg = c.vscPopupBack,
+                    fg = rose.text,
+                    bg = rose.surface,
                 },
 
                 PmenuSel = {
-                    fg = c.vscUiBase,
-                    bg = c.vscAccentBlue,
+                    fg = rose.base,
+                    bg = rose.iris,
                     bold = true,
                 },
 
                 PmenuSbar = {
-                    bg = c.vscScrollBar,
+                    bg = rose.highlight_med,
                 },
 
                 PmenuThumb = {
-                    bg = c.vscScrollBarHover,
+                    bg = rose.highlight_high,
                 },
 
                 TelescopeNormal = {
-                    bg = c.vscPopupBack,
+                    bg = rose.surface,
                 },
 
                 TelescopeBorder = {
-                    fg = c.vscPopupBack,
-                    bg = c.vscPopupBack,
+                    fg = rose.surface,
+                    bg = rose.surface,
                 },
 
                 TelescopePromptNormal = {
-                    bg = c.vscPopupBack,
+                    bg = rose.surface,
                 },
 
                 TelescopePromptBorder = {
-                    fg = c.vscPopupBack,
-                    bg = c.vscPopupBack,
+                    fg = rose.surface,
+                    bg = rose.surface,
                 },
 
                 TelescopePromptTitle = {
-                    fg = c.vscAccentBlue,
-                    bg = c.vscPopupBack,
+                    fg = rose.foam,
+                    bg = rose.surface,
                     bold = true,
                 },
 
                 TelescopeResultsNormal = {
-                    fg = c.vscFront,
-                    bg = c.vscPopupBack,
+                    fg = rose.text,
+                    bg = rose.surface,
                 },
 
                 TelescopeResultsBorder = {
-                    fg = c.vscPopupBack,
-                    bg = c.vscPopupBack,
+                    fg = rose.surface,
+                    bg = rose.surface,
                 },
 
                 TelescopePreviewNormal = {
-                    bg = c.vscPopupBack,
+                    bg = rose.surface,
                 },
 
                 TelescopePreviewBorder = {
-                    fg = c.vscPopupBack,
-                    bg = c.vscPopupBack,
+                    fg = rose.surface,
+                    bg = rose.surface,
                 },
 
-                ["@comment"] = { italic = true },
-                ["@keyword"] = { italic = false },
-                ["@function"] = { italic = false },
-                ["@keyword.return"] = { italic = false },
-                ["@keyword.function"] = { italic = false },
-            }
+                ["@comment"] = {
+                    fg = rose.muted,
+                    italic = true,
+                },
 
+                ["@keyword"] = {
+                    italic = false,
+                },
+
+                ["@function"] = {
+                    italic = false,
+                },
+
+                ["@keyword.return"] = {
+                    italic = false,
+                },
+
+                ["@keyword.function"] = {
+                    italic = false,
+                },
+            },
         })
 
-        vim.cmd.colorscheme("vscode")
+        vim.cmd.colorscheme("rose-pine")
     end,
 }

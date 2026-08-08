@@ -1,33 +1,36 @@
 return {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = "nvim-tree/nvim-web-devicons",
+
     config = function()
-        local colors = require("vscode.colors").get_colors()
+        local rose = require("rose-pine.palette")
         local bufferline = require("bufferline")
-        bufferline.setup {
+
+        bufferline.setup({
             options = {
                 style_preset = {
                     bufferline.style_preset.minimal,
                 },
             },
+
             highlights = {
                 background = {
-                    fg = colors.vscFront,
+                    fg = rose.text,
                     bg = "NONE",
                 },
 
                 buffer_visible = {
-                    fg = colors.vscFront,
+                    fg = rose.text,
                     bg = "NONE",
                 },
 
                 buffer_selected = {
-                    fg = colors.vscFront,
+                    fg = rose.text,
                     bg = "NONE",
                     bold = true,
                 },
             },
-        }
-    end
+        })
+    end,
 }
