@@ -25,7 +25,9 @@ vim.opt.relativenumber = false
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.linebreak = true
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
+
+vim.cmd.colorscheme("default")
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -42,3 +44,5 @@ vim.opt.cmdheight = 0
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = false
+
+vim.g.lazyvim_check_order = false

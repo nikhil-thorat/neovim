@@ -9,7 +9,7 @@ return {
                 layout_config = {
                     prompt_position = "bottom",
                     width = 0.4,
-                    height = 0.4,
+                    height = 0.5,
                 },
                 sorting_strategy = "descending",
             },

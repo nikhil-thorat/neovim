@@ -1,22 +1,22 @@
 if vim.g.colors_name then
-	vim.cmd("highlight clear")
+    vim.cmd("highlight clear")
 end
 vim.cmd("set termguicolors")
 vim.g.colors_name = "stealth"
 
 local colors = {
-	bg = "#010203",
-	surface = "#161616",
-	fg = "#b0b8b8",
-	cursor = "#e2553d",
-	selection = "#1f2828",
-	primary = "#e2553d",
-	mid = "#505558",
-	ghost = "#3a4545",
+    bg = "#010203",
+    surface = "#161616",
+    fg = "#b0b8b8",
+    cursor = "#e2553d",
+    selection = "#1f2828",
+    primary = "#e2553d",
+    mid = "#505558",
+    ghost = "#3a4545",
 }
 
 local hl = function(group, opts)
-	vim.api.nvim_set_hl(0, group, opts)
+    vim.api.nvim_set_hl(0, group, opts)
 end
 
 hl("Normal", { fg = colors.fg, bg = colors.bg })
