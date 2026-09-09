@@ -21,6 +21,7 @@ require("lazy").setup({
 	require("plugins.formatter"),
 	require("plugins.lsp"),
 	require("plugins.neotree"),
+	require("plugins.tabout"),
 	require("plugins.telescope"),
 	require("plugins.todo-comment"),
 	require("plugins.treesitter"),
