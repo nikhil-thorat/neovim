@@ -27,7 +27,7 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.termguicolors = false
 
-vim.cmd.colorscheme("default")
+-- vim.cmd.colorscheme("default")
 
 vim.opt.swapfile = false
 vim.opt.backup = false
