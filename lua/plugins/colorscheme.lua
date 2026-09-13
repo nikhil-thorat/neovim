@@ -1,127 +1,224 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"blazkowolf/gruber-darker.nvim",
 	priority = 1000,
 	lazy = false,
 
 	config = function()
-		local colors = require("kanagawa.colors").setup({ theme = "wave" })
+		vim.cmd.colorscheme("gruber-darker")
 
-		require("kanagawa").setup({
-			theme = "wave",
-			transparent = false,
-			terminalColors = true,
+		local c = {
+			black = "#101010",
+			bg = "#181818",
+			bg_alt = "#282828",
 
-			commentStyle = { italic = true },
-			keywordStyle = {},
-			functionStyle = {},
+			fg = "#E4E4E4",
+			fg_bright = "#FFFFFF",
 
-			overrides = function()
-				return {
-					NormalFloat = {
-						fg = colors.theme.ui.fg,
-						bg = colors.theme.ui.bg_m3,
-					},
+			red = "#F43841",
+			red_bright = "#F43841",
 
-					FloatBorder = {
-						fg = colors.palette.dragonBlue,
-						bg = colors.theme.ui.bg_m3,
-					},
+			green = "#73D936",
+			green_bright = "#73D936",
 
-					FloatTitle = {
-						fg = colors.palette.dragonPink,
-						bg = colors.theme.ui.bg_m3,
-						bold = true,
-					},
+			yellow = "#FFDD33",
+			yellow_bright = "#FFDD33",
 
-					SignColumn = { bg = "NONE" },
-					FoldColumn = { bg = "NONE" },
-					LineNr = { bg = "NONE" },
-					CursorLineNr = { bg = "NONE" },
+			blue = "#96A6C8",
+			blue_bright = "#96A6C8",
 
-					LazyNormal = {
-						bg = colors.theme.ui.bg_m3,
-						fg = colors.theme.ui.fg_dim,
-					},
+			magenta = "#9E95C7",
+			magenta_bright = "#9E95C7",
 
-					MasonNormal = {
-						bg = colors.theme.ui.bg_m3,
-						fg = colors.theme.ui.fg_dim,
-					},
+			cyan = "#95A99F",
+			cyan_bright = "#95A99F",
 
-					Pmenu = {
-						fg = colors.theme.ui.fg,
-						bg = colors.theme.ui.bg_p1,
-					},
+			gray = "#453D41",
+			gray_blue = "#565F73",
 
-					PmenuSel = {
-						fg = colors.theme.ui.bg,
-						bg = colors.palette.dragonBlue,
-					},
+			bell = "#C73C3F",
+		}
 
-					PmenuSbar = {
-						bg = colors.theme.ui.bg_p2,
-					},
+		local set = vim.api.nvim_set_hl
 
-					PmenuThumb = {
-						bg = colors.theme.ui.bg_p1,
-					},
-
-					TelescopeTitle = {
-						fg = colors.palette.dragonPink,
-						bold = true,
-					},
-
-					TelescopePromptNormal = {
-						bg = colors.theme.ui.bg_p1,
-					},
-
-					TelescopePromptBorder = {
-						fg = colors.theme.ui.bg_p1,
-						bg = colors.theme.ui.bg_p1,
-					},
-
-					TelescopeResultsNormal = {
-						fg = colors.theme.ui.fg_dim,
-						bg = colors.theme.ui.bg_m3,
-					},
-
-					TelescopeResultsBorder = {
-						fg = colors.theme.ui.bg_m3,
-						bg = colors.theme.ui.bg_m3,
-					},
-
-					TelescopePreviewNormal = {
-						bg = colors.theme.ui.bg,
-					},
-
-					TelescopePreviewBorder = {
-						fg = colors.theme.ui.bg,
-						bg = colors.theme.ui.bg,
-					},
-
-					["@comment"] = {
-						italic = true,
-					},
-
-					["@keyword"] = {
-						italic = false,
-					},
-
-					["@function"] = {
-						italic = false,
-					},
-
-					["@keyword.return"] = {
-						italic = false,
-					},
-
-					["@keyword.function"] = {
-						italic = false,
-					},
-				}
-			end,
+		set(0, "Normal", {
+			fg = c.fg,
+			bg = c.bg,
 		})
 
-		vim.cmd.colorscheme("kanagawa-wave")
+		set(0, "NormalFloat", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "Cursor", {
+			fg = c.black,
+			bg = c.yellow,
+		})
+
+		set(0, "CursorLine", {
+			bg = c.bg_alt,
+		})
+
+		set(0, "CursorLineNr", {
+			fg = c.yellow,
+			bg = "NONE",
+			bold = true,
+		})
+
+		set(0, "LineNr", {
+			fg = c.gray,
+			bg = "NONE",
+		})
+
+		set(0, "SignColumn", {
+			bg = "NONE",
+		})
+
+		set(0, "FoldColumn", {
+			bg = "NONE",
+		})
+
+		set(0, "FloatBorder", {
+			fg = c.blue,
+			bg = c.bg_alt,
+		})
+
+		set(0, "FloatTitle", {
+			fg = c.magenta,
+			bg = c.bg_alt,
+			bold = true,
+		})
+
+		set(0, "Pmenu", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "PmenuSel", {
+			fg = c.black,
+			bg = c.yellow,
+			bold = true,
+		})
+
+		set(0, "PmenuSbar", {
+			bg = c.black,
+		})
+
+		set(0, "PmenuThumb", {
+			bg = c.gray,
+		})
+
+		set(0, "TelescopeNormal", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopeBorder", {
+			fg = c.blue,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopeTitle", {
+			fg = c.magenta,
+			bg = c.bg_alt,
+			bold = true,
+		})
+
+		set(0, "TelescopePromptNormal", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopePromptBorder", {
+			fg = c.bg_alt,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopePromptTitle", {
+			fg = c.yellow,
+			bg = c.bg_alt,
+			bold = true,
+		})
+
+		set(0, "TelescopeResultsNormal", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopeResultsBorder", {
+			fg = c.bg_alt,
+			bg = c.bg_alt,
+		})
+
+		set(0, "TelescopePreviewNormal", {
+			fg = c.fg,
+			bg = c.bg,
+		})
+
+		set(0, "TelescopePreviewBorder", {
+			fg = c.bg,
+			bg = c.bg,
+		})
+
+		set(0, "LazyNormal", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "LazyBorder", {
+			fg = c.blue,
+			bg = c.bg_alt,
+		})
+
+		set(0, "MasonNormal", {
+			fg = c.fg,
+			bg = c.bg_alt,
+		})
+
+		set(0, "MasonBorder", {
+			fg = c.blue,
+			bg = c.bg_alt,
+		})
+
+		set(0, "DiagnosticError", {
+			fg = c.red,
+		})
+
+		set(0, "DiagnosticWarn", {
+			fg = c.yellow,
+		})
+
+		set(0, "DiagnosticInfo", {
+			fg = c.blue,
+		})
+
+		set(0, "DiagnosticHint", {
+			fg = c.green,
+		})
+
+		set(0, "DiagnosticUnderlineError", {
+			undercurl = true,
+			sp = c.red,
+		})
+
+		set(0, "DiagnosticUnderlineWarn", {
+			undercurl = true,
+			sp = c.yellow,
+		})
+
+		set(0, "GitSignsAdd", {
+			fg = c.green,
+			bg = "NONE",
+		})
+
+		set(0, "GitSignsChange", {
+			fg = c.yellow,
+			bg = "NONE",
+		})
+
+		set(0, "GitSignsDelete", {
+			fg = c.red,
+			bg = "NONE",
+		})
 	end,
 }
